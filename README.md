@@ -1,3 +1,5 @@
 # musicMaker
 
-test push 2
+Before Running simple_drummer.py:
+sudo pip install pydub
+sudo pip install sounddevice

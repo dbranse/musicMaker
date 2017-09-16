@@ -17,7 +17,7 @@ def transform_file(flpath):
 
         return trim_ms
 
-    sound = AudioSegment.from_file("flpath", format="wav")
+    sound = AudioSegment.from_file(flpath, format="wav")
 
     start_trim = detect_leading_silence(sound)
     end_trim = detect_leading_silence(sound.reverse())
