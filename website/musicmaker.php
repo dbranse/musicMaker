@@ -26,8 +26,9 @@
         function click(intervalId){
             $.post("http://localhost:5555/click", function(data,status){
                 if (data['isClicked']) {
+                    
                     clearInterval(intervalId);
-                    $(".circle-panel").css("display", "block");
+                    //$(".circle-panel").css("display", "block");///
                     initialRecordings();
                 };
                 return (data['isClicked']);
@@ -66,10 +67,11 @@
                 }
             }, 1000);
 
-            setTimeout(function() {snare();}, 6000);
+            setTimeout(function() {snare();}, 10000);
         }
 
         function snare() {
+            //$(".circle-panel").css("display", "none");
             //Set Up Text/Counter
             var counter = 6;
             var text1 = "Say 'Psh' loudly and quickly in ";
@@ -88,10 +90,11 @@
                 }
             }, 1000);
 
-            setTimeout(function() {hihat();}, 6000);
+            setTimeout(function() {hihat();}, 10000);
         }
 
         function hihat() {
+            //$(".circle-panel").css("display", "none");
             //Set Up Text/Counter
             var counter = 6;
             var text1 = "Say 'Tss' loudly and quickly in ";
@@ -110,10 +113,11 @@
                 }
             }, 1000);
 
-            setTimeout(function() {clap();}, 6000);
+            setTimeout(function() {clap();}, 10000);
         }
         
         function clap() {
+            //$(".circle-panel").css("display", "none");
             //Set Up Text/Counter
             var counter = 6;
             var text1 = "Clap your hands once in ";
