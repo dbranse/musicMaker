@@ -159,6 +159,15 @@
                     clearInterval(id);
                 }
             }, 1000);
+
+            setTimeout(function() {
+                $("#timeText").text("Please wait while we calculate your song!");
+                makeSong();
+            })
+        }
+
+        function makeSong() {
+            $.post("http://localhost:5555/makeSong");
         }
         
         
