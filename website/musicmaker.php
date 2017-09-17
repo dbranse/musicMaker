@@ -9,150 +9,129 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     
     <script>
-
         window.addEventListener('load', function() {
             console.log("WINDOW LOADED");
-            click();
-        })
+            var intervalId = setInterval(function() {
+                click(intervalId);
+            });
+        }, 1000);
+        
         
         function gotSound() { //asking if the server got the sound
             $.get("http://localhost:5555", function(data,status){
                 return (status=="success");
-            })
+            });
         }
         
-        function click(){
+        function click(intervalId){
             $.post("http://localhost:5555/click", function(data,status){
+                if (data['isClicked']) {
+                    clearInterval(intervalId);
+                    $(".circle-panel").css("display", "block");
+                    initialRecordings();
+                };
                 return (data['isClicked']);
-            })
+            });
         }
         
         function startRec(name){ //bass snare hihat clap
-            $.post("http://localhost:5555/sound/" + name, function(data,status){
-                return (data['isClicked']);
-            })
+            $.post("http://localhost:5555/sound/" + name);
         }
     
-        function main(){
-            isClicked = false;
-            setInterval(function {
-                if (click() && !isClicked) {
-                    isClicked = true;
-                    $(".circle-panel").css("display", "block");
-                    setTimeout(function() {}, 3000);
-                    $(".text-panel").css("display", "none");
-                    isClicked = false;
-                };
-            }, 1000);
-                }
-                
-            
-            setTimeout(function() {}, 3000);
+        function initialRecordings(){
+            setTimeout(function() {bass();}, 1500);
+        }
+
+        function bass() {
+            //Remove Information Panels
             $(".circle-panel").css("display", "none");
-            //bass
-            $(".buh").css("display", "block");
+            $(".text-panel").css("display", "none");
+
+            //Set Up Text/Counter
+            var counter = 6;
+            var text1 = "Say 'Buh' deeply and quickly in ";
+            var text2 = " seconds.";
+            $("#timeText").text(text1 + counter + text2);
+            $("#timeText").css("display", "block");
+            
+            //Tell to startRecording
             startRec("bass");
-            var downloadButton = document.getElementById("download");
-            var counter = 3;
-            var newElement = document.createElement("p");
-            newElement.innerHTML = "Say 'Buh' deeply and quickly in 3 seconds.";
-            var id;
 
-            downloadButton.parentNode.replaceChild(newElement, downloadButton);
-
-            id = setInterval(function() {
+            //Count Down
+            var id = setInterval(function() {
+                $("#timeText").text(text1 + counter + text2);
                 counter--;
-            if(counter < 0) {
-                newElement.parentNode.replaceChild(downloadButton, newElement);
-                clearInterval(id);
-            } else {
-                newElement.innerHTML = "Say 'Buh' deeply and quickly in " + counter.toString() + " seconds.";
-            }
-                }, 1000);
-            $(".circle-panel").css("display", "block");
-            
-            setTimeout(function() {}, 3000);
-            $(".buh").css("display", "none");
-            $(".circle-panel").css("display", "none");
-            $(".snare").css("display", "block");
-        
-            //snare
-            startRec("snare");
-            var downloadButton = document.getElementById("download");
-            var counter = 3;
-            var newElement = document.createElement("p");
-            newElement.innerHTML = "Say 'Psh' loudly and quickly in 3 seconds.";
-            var id;
+                if(counter < 0) {
+                    clearInterval(id);
+                }
+            }, 1000);
 
-            downloadButton.parentNode.replaceChild(newElement, downloadButton);
-
-            id = setInterval(function() {
-                counter--;
-            if(counter < 0) {
-                newElement.parentNode.replaceChild(downloadButton, newElement);
-                clearInterval(id);
-            } else {
-                newElement.innerHTML = "Say 'Psh' loudly and quickly in " + counter.toString() + " seconds.";
-            }
-                }, 1000);
-            $(".circle-panel").css("display", "block");
-            
-            setTimeout(function() {}, 3000);
-            $(".snare").css("display", "none");
-            $(".circle-panel").css("display", "none");
-            $(".hi").css("display", "block");
-            
-            //hihat
-            startRec("hihat");
-            var downloadButton = document.getElementById("download");
-            var counter = 3;
-            var newElement = document.createElement("p");
-            newElement.innerHTML = "Say 'Tss' loudly and quickly in 3 seconds.";
-            var id;
-
-            downloadButton.parentNode.replaceChild(newElement, downloadButton);
-
-            id = setInterval(function() {
-                counter--;
-            if(counter < 0) {
-                newElement.parentNode.replaceChild(downloadButton, newElement);
-                clearInterval(id);
-            } else {
-                newElement.innerHTML = "Say 'Tss' loudly and quickly in " + counter.toString() + " seconds.";
-            }
-                }, 1000);
-            $(".circle-panel").css("display", "block");
-            
-            setTimeout(function() {}, 3000);
-            $(".hi").css("display", "none");
-            $(".circle-panel").css("display", "none");
-            $(".clap").css("display", "block");
-            
-            //hihat
-            startRec("clap");
-            var downloadButton = document.getElementById("download");
-            var counter = 3;
-            var newElement = document.createElement("p");
-            newElement.innerHTML = "Clap your hands once in 3 seconds.";
-            var id;
-
-            downloadButton.parentNode.replaceChild(newElement, downloadButton);
-
-            id = setInterval(function() {
-                counter--;
-            if(counter < 0) {
-                newElement.parentNode.replaceChild(downloadButton, newElement);
-                clearInterval(id);
-            } else {
-                newElement.innerHTML = "Clap your hands once in " + counter.toString() + " seconds.";
-            }
-                }, 1000);
-            
-            
-            
-            
+            setTimeout(function() {snare();}, 6000);
         }
-    
+
+        function snare() {
+            //Set Up Text/Counter
+            var counter = 6;
+            var text1 = "Say 'Psh' loudly and quickly in ";
+            var text2 = " seconds.";
+            $("#timeText").text(text1 + counter + text2);
+
+            //Tell to startRecording
+            startRec("snare");
+
+            //Count Down
+            var id = setInterval(function() {
+                $("#timeText").text(text1 + counter + text2);
+                counter--;
+                if(counter < 0) {
+                    clearInterval(id);
+                }
+            }, 1000);
+
+            setTimeout(function() {hihat();}, 6000);
+        }
+
+        function hihat() {
+            //Set Up Text/Counter
+            var counter = 6;
+            var text1 = "Say 'Tss' loudly and quickly in ";
+            var text2 = " seconds.";
+            $("#timeText").text(text1 + counter + text2);
+            
+            //Tell to startRecording
+            startRec("hihat");
+
+            //Count Down
+            var id = setInterval(function() {
+                $("#timeText").text(text1 + counter + text2);
+                counter--;
+                if(counter < 0) {
+                    clearInterval(id);
+                }
+            }, 1000);
+
+            setTimeout(function() {clap();}, 6000);
+        }
+        
+        function clap() {
+            //Set Up Text/Counter
+            var counter = 6;
+            var text1 = "Clap your hands once in ";
+            var text2 = " seconds.";
+            $("#timeText").text(text1 + counter + text2);
+            
+            //Tell to startRecording
+            startRec("clap");
+
+            //Count Down
+            var id = setInterval(function() {
+                $("#timeText").text(text1 + counter + text2);
+                counter--;
+                if(counter < 0) {
+                    clearInterval(id);
+                }
+            }, 1000);
+        }        
     
     </script>
     <!-- fonts-->
@@ -187,13 +166,14 @@
         <img src="http://varungadh.com/hackmit.png" href="">
     </div>
     
-    <div id="download" class="buh">Buh!</div>
+    <div id="timeText"></div>
+    <!-- <div id="timeText" class="buh">Buh!</div>
     
-    <div id="download" class="snare">Psh!</div>
+    <div id="timeText" class="snare">Psh!</div>
     
-    <div id="download" class="hi">Tss!</div>
+    <div id="timeText" class="hi">Tss!</div>
     
-    <div id="download" class="clap">Clap!</div>
+    <div id="timeText" class="clap">Clap!</div> -->
     
     
 </body>
