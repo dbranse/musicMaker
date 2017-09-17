@@ -20,7 +20,7 @@
         function gotSound() { //asking if the server got the sound
             $.get("http://localhost:5555", function(data,status){
                 return (status=="success");
-            })
+            });
         }
         
         function click(intervalId){
@@ -28,10 +28,10 @@
                 if (data['isClicked']) {
                     clearInterval(intervalId);
                     $(".circle-panel").css("display", "block");
-                    setTimeout(initialRecordings(), 3000);
+                    initialRecordings();
                 };
                 return (data['isClicked']);
-            })
+            });
         }
         
         function startRec(name){ //bass snare hihat clap
@@ -39,7 +39,7 @@
         }
     
         function initialRecordings(){
-            setTimeout(bass(), 3000);
+            setTimeout(function() {bass();}, 1500);
         }
 
         function bass() {
@@ -66,7 +66,7 @@
                 }
             }, 1000);
 
-            //setTimeout(snare(), 3000);
+            setTimeout(function() {snare();}, 6000);
         }
 
         function snare() {
@@ -88,7 +88,7 @@
                 }
             }, 1000);
 
-            // setTimeout(hihat(), 5000);
+            setTimeout(function() {hihat();}, 6000);
         }
 
         function hihat() {
@@ -110,7 +110,7 @@
                 }
             }, 1000);
 
-            setTimeout(clap(), 5000);
+            setTimeout(function() {clap();}, 6000);
         }
         
         function clap() {
