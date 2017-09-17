@@ -45,9 +45,9 @@
                 };
             }, 1000);
                 }
-                setTimeout(function() {}, 3000);
-            }
+                
             
+            setTimeout(function() {}, 3000);
             $(".circle-panel").css("display", "none");
             //bass
             $(".buh").css("display", "block");
@@ -69,10 +69,13 @@
                 newElement.innerHTML = "Say 'Buh' deeply and quickly in " + counter.toString() + " seconds.";
             }
                 }, 1000);
+            $(".circle-panel").css("display", "block");
             
-            
-            
-            
+            setTimeout(function() {}, 3000);
+            $(".buh").css("display", "none");
+            $(".circle-panel").css("display", "none");
+            $(".snare").css("display", "block");
+        
             //snare
             startRec("snare");
             var downloadButton = document.getElementById("download");
@@ -92,11 +95,15 @@
                 newElement.innerHTML = "Say 'Psh' loudly and quickly in " + counter.toString() + " seconds.";
             }
                 }, 1000);
+            $(".circle-panel").css("display", "block");
             
-            
+            setTimeout(function() {}, 3000);
+            $(".snare").css("display", "none");
+            $(".circle-panel").css("display", "none");
+            $(".hi").css("display", "block");
             
             //hihat
-            startRec("snare");
+            startRec("hihat");
             var downloadButton = document.getElementById("download");
             var counter = 3;
             var newElement = document.createElement("p");
@@ -114,10 +121,15 @@
                 newElement.innerHTML = "Say 'Tss' loudly and quickly in " + counter.toString() + " seconds.";
             }
                 }, 1000);
+            $(".circle-panel").css("display", "block");
             
+            setTimeout(function() {}, 3000);
+            $(".hi").css("display", "none");
+            $(".circle-panel").css("display", "none");
+            $(".clap").css("display", "block");
             
             //hihat
-            startRec("snare");
+            startRec("clap");
             var downloadButton = document.getElementById("download");
             var counter = 3;
             var newElement = document.createElement("p");
