@@ -26,34 +26,119 @@
                 return (data['isClicked']);
             })
         }
+        
+        function startRec(name){ //bass snare hihat clap
+            $.post("http://localhost:5555/sound/" + name, function(data,status){
+                return (data['isClicked']);
+            })
+        }
     
         function main(){
-                if (click()){
+            isClicked = false;
+            setInterval(function {
+                if (click() && !isClicked) {
+                    isClicked = true;
                     $(".circle-panel").css("display", "block");
-                    setTimeout(myFunction, 3000);
+                    setTimeout(function() {}, 3000);
                     $(".text-panel").css("display", "none");
-                    
+                    isClicked = false;
+                };
+            }, 1000);
                 }
-
+                setTimeout(function() {}, 3000);
+            }
             
+            $(".circle-panel").css("display", "none");
+            //bass
+            $(".buh").css("display", "block");
+            startRec("bass");
             var downloadButton = document.getElementById("download");
-var counter = 10;
-var newElement = document.createElement("p");
-newElement.innerHTML = "You can download the file in 10 seconds.";
-var id;
+            var counter = 3;
+            var newElement = document.createElement("p");
+            newElement.innerHTML = "Say 'Buh' deeply and quickly in 3 seconds.";
+            var id;
 
-downloadButton.parentNode.replaceChild(newElement, downloadButton);
+            downloadButton.parentNode.replaceChild(newElement, downloadButton);
 
-id = setInterval(function() {
-    counter--;
-    if(counter < 0) {
-        newElement.parentNode.replaceChild(downloadButton, newElement);
-        clearInterval(id);
-    } else {
-        newElement.innerHTML = "You can download the file in " + counter.toString() + " seconds.";
-    }
-}, 1000); 
+            id = setInterval(function() {
+                counter--;
+            if(counter < 0) {
+                newElement.parentNode.replaceChild(downloadButton, newElement);
+                clearInterval(id);
+            } else {
+                newElement.innerHTML = "Say 'Buh' deeply and quickly in " + counter.toString() + " seconds.";
+            }
+                }, 1000);
+            
+            
+            
+            
+            //snare
+            startRec("snare");
+            var downloadButton = document.getElementById("download");
+            var counter = 3;
+            var newElement = document.createElement("p");
+            newElement.innerHTML = "Say 'Psh' loudly and quickly in 3 seconds.";
+            var id;
 
+            downloadButton.parentNode.replaceChild(newElement, downloadButton);
+
+            id = setInterval(function() {
+                counter--;
+            if(counter < 0) {
+                newElement.parentNode.replaceChild(downloadButton, newElement);
+                clearInterval(id);
+            } else {
+                newElement.innerHTML = "Say 'Psh' loudly and quickly in " + counter.toString() + " seconds.";
+            }
+                }, 1000);
+            
+            
+            
+            //hihat
+            startRec("snare");
+            var downloadButton = document.getElementById("download");
+            var counter = 3;
+            var newElement = document.createElement("p");
+            newElement.innerHTML = "Say 'Tss' loudly and quickly in 3 seconds.";
+            var id;
+
+            downloadButton.parentNode.replaceChild(newElement, downloadButton);
+
+            id = setInterval(function() {
+                counter--;
+            if(counter < 0) {
+                newElement.parentNode.replaceChild(downloadButton, newElement);
+                clearInterval(id);
+            } else {
+                newElement.innerHTML = "Say 'Tss' loudly and quickly in " + counter.toString() + " seconds.";
+            }
+                }, 1000);
+            
+            
+            //hihat
+            startRec("snare");
+            var downloadButton = document.getElementById("download");
+            var counter = 3;
+            var newElement = document.createElement("p");
+            newElement.innerHTML = "Clap your hands once in 3 seconds.";
+            var id;
+
+            downloadButton.parentNode.replaceChild(newElement, downloadButton);
+
+            id = setInterval(function() {
+                counter--;
+            if(counter < 0) {
+                newElement.parentNode.replaceChild(downloadButton, newElement);
+                clearInterval(id);
+            } else {
+                newElement.innerHTML = "Clap your hands once in " + counter.toString() + " seconds.";
+            }
+                }, 1000);
+            
+            
+            
+            
         }
     
     
@@ -90,14 +175,13 @@ id = setInterval(function() {
         <img src="http://varungadh.com/hackmit.png" href="">
     </div>
     
-    <div class="title-top2">
-        Quickly and loudly say "Bo!" in 
-        
-        
-        <a href="" id="download" class="button">Go!</a>
-    </div>
+    <div id="download" class="buh">Buh!</div>
     
+    <div id="download" class="snare">Psh!</div>
     
+    <div id="download" class="hi">Tss!</div>
+    
+    <div id="download" class="clap">Clap!</div>
     
     
 </body>
