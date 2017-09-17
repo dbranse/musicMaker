@@ -135,8 +135,33 @@
                     clearInterval(id);
                 }
             }, 1000);
+            
+            setTimeout(function() {sing();}, 10000);
         }        
     
+        
+        function sing() {
+            //$(".circle-panel").css("display", "none");
+            //Set Up Text/Counter
+            var counter = 6;
+            var text1 = "Quickly sing any note in ";
+            var text2 = " seconds.";
+            $("#timeText").text(text1 + counter + text2);
+            
+            //Tell to startRecording
+            startRec("sing");
+
+            //Count Down
+            var id = setInterval(function() {
+                $("#timeText").text(text1 + counter + text2);
+                counter--;
+                if(counter < 0) {
+                    clearInterval(id);
+                }
+            }, 1000);
+        }
+        
+        
     </script>
     <!-- fonts-->
 <link href='https://fonts.googleapis.com/css?family=Arvo|Bree+Serif|Varela+Round|Signika:400,600,300' rel='stylesheet' type='text/css'>
