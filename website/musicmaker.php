@@ -161,14 +161,41 @@
                 }
             }, 1000);
 
+            setTimeout(function() {flex();}, 10000);
+        }
+        
+        function flex() {
+            //$(".circle-panel").css("display", "none");
+            //Set Up Text/Counter
+            var counter = 6;
+            var text1 = "Please flex the sensor and hold it ";
+            var text2 = " seconds.";
+            $("#timeText").text(text1 + counter + text2);
+            
+            //Tell to startRecording
+            startRec("flex");
+            
+            //Count Down
+            var id = setInterval(function() {
+                $("#timeText").text(text1 + counter + text2);
+                counter--;
+                if(counter < 0) {
+                    clearInterval(id);
+                }
+            }, 1000);
+
             setTimeout(function() {
                 $("#timeText").text("Please wait while we calculate your song!");
                 makeSong();
-            })
+            }, 8000)
         }
 
         function makeSong() {
             $.post("http://localhost:5555/makeSong");
+            setTimeout(function() {
+                $("#timeText").text("Here's your dope song! This is one-of-a-kind, and is nearly impossible to perfectly replicate.");
+                
+            })
         }
         
         
@@ -193,7 +220,7 @@
     
     
     <div class="title-top">
-        Welcome to <span class="text-panel-green">BeatRoot.</span>
+        Welcome to <span class="text-panel-green">BeatRoot.</span> <br>
          A semi-automated beat generation tool with a human touch.
 </div>
     
