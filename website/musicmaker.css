@@ -412,12 +412,13 @@ button, a.button{
     left: 40%;
     margin-top: -190px;
     margin-left: -9%;
-    
+    display: none;
     
 }
 
 .circle-panel img{
-    
+    display: none; margin: auto; margin-top: -270px; opacity: .9;
+    width: 40%;
     
 }
 

@@ -27,8 +27,9 @@
     
         function main(){
                 if (click()){
-                    
+                    $(".circle-panel").css("display", "block");
                     setTimeout(myFunction, 3000);
+                    $(".text-panel").css("display", "none");
                 }
             
             
@@ -48,7 +49,6 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
        <!-- site-wide CSS-->
 <link rel="stylesheet" type="text/css" href="musicmaker.css">
-    
     </head>
 
 
@@ -68,10 +68,8 @@
     </div>
     
     
-    <div class=".circle-panel">
-        <img src="http://varungadh.com/hackmit.png" href="" style="display: block;
-    margin: auto; margin-top: -270px; opacity: .9;
-    width: 40%;">
+    <div class="circle-panel">
+        <img src="http://varungadh.com/hackmit.png" href="">
     </div>
     
     
