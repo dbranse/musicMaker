@@ -28,15 +28,9 @@
         }
     
         function main(){
-                if (click()){
-                    
-                    setTimeout(myFunction, 3000);
-                }
-            
-            
-            
-            
-            
+            if (click()){        
+                setTimeout(myFunction, 3000);
+            }    
         }
     
     
