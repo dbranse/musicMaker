@@ -2,11 +2,10 @@ import time
 import numpy as np
 import sounddevice as sd
 from pydub import AudioSegment
-
 #sampling rate
 fs = 44100
 
-
+AudioSegment.converter = '/Users/Marko/Downloads/Lion_Mountain_Lion_Mavericks_Yosemite_El-Captain_15.05.2017/ffmpeg'
 
 def transform_file(flpath):
 
@@ -22,17 +21,17 @@ def transform_file(flpath):
     start_trim = detect_leading_silence(sound)
     end_trim = detect_leading_silence(sound.reverse())
 
-    trimmed_sound = sound[start_trim:-end_trim]
+    trimmed_sound = sound#[start_trim:-end_trim]
 
     return trimmed_sound.get_array_of_samples()
 
 
 
 # these will eventually be music files
-bass = transform_file('bass.wav')
-snare = transform_file('snare.wav')
-hihat = transform_file('hihat.wav')
-clap = transform_file('clap.wav')
+bass = np.array(transform_file('bass.wav')).astype(np.int32)
+snare = np.array(transform_file('snare.wav')).astype(np.int32)
+hihat = np.array(transform_file('hihat.wav')).astype(np.int32)
+clap = np.array(transform_file('clap.wav')).astype(np.int32)
 
 d = {0: bass, 1: snare, 2: hihat, 3: clap}
 
