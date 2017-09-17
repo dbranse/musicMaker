@@ -13,7 +13,7 @@
         window.addEventListener('load', function() {
             console.log("WINDOW LOADED");
             click();
-
+        })
         
         function gotSound() { //asking if the server got the sound
             $.get("http://localhost:5555", function(data,status){
@@ -34,6 +34,7 @@
                     $(".text-panel").css("display", "none");
                     
                 }
+
             
             var downloadButton = document.getElementById("download");
 var counter = 10;
@@ -51,10 +52,8 @@ id = setInterval(function() {
     } else {
         newElement.innerHTML = "You can download the file in " + counter.toString() + " seconds.";
     }
-}, 1000);
-            
+}, 1000); 
 
-            
         }
     
     
