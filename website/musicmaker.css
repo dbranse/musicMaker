@@ -1,0 +1,562 @@
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+*{
+    -webkit-overflow-scrolling: touch
+}
+
+.Lato{
+    
+    font-family: 'Lato', sans-serif;
+}
+
+.Sanchez-RegularItalic { 
+	font-family: Sanchez-RegularItalic;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.Sanchez-Regular { 
+	font-family: Sanchez-Regular;
+	font-weight: normal;
+	font-style: normal;
+}
+
+::selection{
+    
+    
+    background: #c6e5cd;
+}
+
+
+h1,h2{
+        
+}
+
+
+/* these are not important for anything*/
+
+.menu-btn div {
+	position: absolute;
+	left: 100%;
+	top: 64%;
+	padding-right: 8px;
+	margin-top: -0.50em;
+	line-height: 1.2;
+	font-size: 18px;
+	font-weight: 200;
+	vertical-align: middle;
+	z-index: 99;
+}
+
+.menu-btn span {
+	display: block;
+	width: 19px;
+	height: 3px;
+	margin: 4px 0;
+	background: rgb(0,0,0);
+	z-index: 99;
+}
+
+.responsive-menu{
+	display: none;
+}
+
+/* these are not important for anything*/
+
+
+
+
+
+
+
+
+
+.subtitle{
+    font-family: 'BebasBook', sans-serif;
+    color: #3b3b3b;
+	clear: both;
+    margin-top: -10px;
+    font-size: 33pt;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+ h2 {  
+    /*font-family: 'Montserrat', sans-serif;*/
+	
+	clear: both;
+    text-align: center;
+    /*color: #00bdb8;*/
+}
+
+.green-title{
+    font-family: 'BebasBook', sans-serif;
+    
+    /*color: #00bdb8;*/
+    color: #3b3b3b;
+    margin: 105px 0px auto auto;
+    font-size: 55pt;
+    text-align: center;
+    
+}
+
+.title-top{
+    font-family: 'Lato', sans-serif;
+    color: #C1C1C1;
+
+    margin-top: 200px;
+    
+    width: 100%;
+    font-size: 4.5em;
+    text-align: center;
+    clear: both;
+    
+
+}
+
+.highlight-link{
+    /*background-color: #c6e5cd;*/
+    font-family: Montserrat;
+    text-align: left;
+    color: black;  
+    /*border-bottom: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: #c6e5cd;*/
+    color: black;
+    box-shadow: inset 0px -4px 0px #c6e5cd;
+}
+
+.name-panel, .menu-extender{
+    float: left;
+    text-align: left;
+    top: 0px;
+    left: 0px;
+    font-family: 'BebasReg', sans-serif;
+    
+}
+
+.menu-extender{
+    display: none;
+    
+}
+
+a.logo-link{
+    /*background-color: #c6e5cd;*/
+    font-family: 'BebasReg', sans-serif;
+    text-align: left;
+    color: #3b3b3b; 
+    /*border-bottom: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: #c6e5cd;*/
+    color: black;
+    /*box-shadow: inset 0px -4px 0px #c6e5cd;*/
+    font-size: 90px;
+    margin-left: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.logo-link-underline{
+    background: #c6e5cd;
+    height: 8px;
+    position: relative;
+    
+    margin-left: 10px;
+    border: none;
+    
+}
+
+.hamburger{
+    top: -41px;
+    position: relative;
+}
+
+.hamburger-lines{
+    
+    background: #c6e5cd;
+    height: 8px;
+    position: relative;
+    margin-top:8px;
+    display: none;
+    margin-left: 10px;
+    border: none;
+}
+
+.name-panel img{
+    width:90px;
+    margin: 10px 10px 10px 10px;
+}
+
+
+.sidebar{
+    top: 0px;
+    left 0px;
+    position:fixed;
+    z-index: 10;
+}
+
+.link-panel{
+    /*font-family: Sanchez-Regular;
+    color: #7CC8BF; THE COLOR IS DETERMINED BY THE FACT THAT THEY'RE LINKS'*/
+    
+    font-family: 'Montserrat', sans-serif;
+    
+    text-align: left;
+    /*width: 26%;*/
+    left: 11px;
+    top: -30px;
+    /*margin-top:10px;*/
+    font-size: 11pt;
+    color: #3b3b3b;
+    /*
+        margin-top: 100px;
+        
+        margin-right: auto;
+        margin-bottom: auto;
+    */
+    margin: auto;
+    z-index: 2;
+    content: open-quote;
+    position: relative;
+    clear: both;
+}
+
+.link-panel.expand {
+    font-size: 10pt; 
+    width: 100%; /*background-color: white; border:1px solid black;*/
+    /*background-color: rgba(136,41,215,0.95);
+    */
+    
+    background-color: #c6e5cd;
+    padding: 5px 8px 5px 8px;
+    opacity: 0.97;
+    color: #3b3b3b;
+}
+
+.link-panel.expand p {
+    
+    margin: 5px 0px 5px 0px;
+}
+
+
+
+.link-panel.expand a:link, .link-panel.expand a:visited {
+    color: #3b3b3b;
+}
+
+.link-panel img,iframe{
+    margin-left: 0px;
+    /*width: 12px;*/
+    height: 12px;
+    width: auto;
+    margin-top:-2px;
+
+}
+    
+
+
+
+
+a:link, a:visited{
+    
+    /*color: #8829d7;*/
+    color: black;
+    text-decoration: none;
+}
+    
+a:hover{
+    color: #CC7876;
+}
+    
+a:active{
+    /*color: #5276CB;*/
+    color: black;
+    text-decoration: none;
+}
+
+logotext{
+    color: #3b3b3b;
+}
+    
+body {
+    /*font-family: Sanchez-Regular;
+    background-color: white;
+    /*font-family: 'Anaheim', sans-serif;*/
+    min-width: 300px;
+    width: 100%;
+    /*margin: 0px auto;*/
+    background-color: #2B2B2B;
+}
+   
+    
+.photo-panel img,iframe{
+    display: block;
+    margin: auto;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    width: 400px;
+}
+
+
+.resume-panel iframe{
+    width: 50%;
+    /*
+    width:718px; */
+    height:980px;
+}
+
+.resume-panel {
+  position: relative;
+
+    
+}
+ 
+/* 16x9 Aspect Ratio 
+.resume-panel-16x9 {
+  padding-bottom: 56.25%;
+}
+ 
+/* 4x3 Aspect Ratio 
+.resume-panel-4x3 {
+  padding-bottom: 75%;
+}
+ 
+.resume-panel iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+*/
+
+.category-links{
+    display:none;
+}
+
+.category-links.expand{
+
+}
+
+.form-panel{
+        
+    /*font-family: Sanchez-Regular;*/
+    font-family: Montserrat;
+    text-align: left;
+    color:   #3b3b3b;  
+   /* width: 600px;*/
+    width: 100%;
+    margin: auto;
+    margin-bottom: 10px;
+    font-size: 15;
+    line-height: 1.4em;
+    
+    /*margin: auto; */
+}
+
+.form-panel p{
+    margin: 10px 0px 0 0;
+    text-align: center;
+}
+
+.formemail{
+    
+    margin: 10px 0px 0px 0px;
+    width:100%;
+}
+
+.formtext{
+    margin: 10px 0px 0px 0px;
+    width:100%;
+}
+
+button, a.button{    
+        font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: 2px solid #359173;
+    color: #3b3b3b;
+    background: transparent;
+    line-height: 1em;
+    padding: 0.6em 0.9em;
+    transition: all 0.3s ease-in-out;
+}
+
+.text-panel{
+    
+    /*font-family: Sanchez-Regular;*/
+    font-family: Lato;
+    text-align: center;
+    color: #C1C1C1;  
+   /* width: 600px;*/
+    width: 45%;
+    margin: auto;
+    margin-bottom: 0.63em;
+    font-size: 2em;
+    line-height: 1.4em;
+}
+
+.text-panel-green{
+    color:   #70E889;  
+
+    
+}
+
+/*
+.text-panel1 img{
+   
+    color:   darkslategrey;  
+
+    margin: auto;
+    font-size: 15;
+    line-height: 1.4em;
+}
+*/
+.text-panel1 img{
+    display: block;
+    margin: 0 auto;
+        width: 100%;
+    height: auto;
+}
+
+@font-face{
+    
+    font-family: 'BebasBold';
+    src: 
+        url('BebasNeue%20Bold.ttf')
+        format('truetype');
+}
+
+@font-face{
+    
+    font-family: 'BebasThin';
+    src: 
+        url('BebasNeue%20Thin.ttf')
+        format('truetype');
+}
+
+
+@font-face{
+    
+    font-family: 'BebasBook';
+    src: 
+        url('BebasNeue%20Book.ttf')
+        format('truetype');
+}
+
+@font-face{
+    
+    font-family: 'BebasReg';
+    src: 
+        url('BebasNeue%20Regular.ttf')
+        format('truetype');
+}
+
+.about-panel{
+    text-align: center;
+    color:   darkslategrey;  
+    width: 600px;
+    margin: auto;
+    font-size: 15;
+    line-height: 1.4em;
+    
+    
+}
+
+.copyright-panel{
+    font-family: Montserrat;
+    margin-bottom: 15px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+
+
+/*responsive*/
+
+
+/* Checkbox Hack */
+
+
+
+
+@media screen and (min-width: 1350px) {
+
+}
+
+
+
+@media screen and (max-width: 1350px) {
+    /*.title-top {font-size: 80pt;}*/
+    .link-panel {font-size: 11pt; top: -30px;}
+    .green-title{font-size:46pt;}
+
+    .logo-link {font-size: 85px;}
+    .hamburger {top: -41px;}
+}
+
+@media screen and (max-width: 1200px) {
+    /*.title-top {font-size: 65pt; }*/
+    .link-panel {font-size: 10pt; top: -26px;}
+    .subtitle{font-size: 33pt; margin-top: 12px;}
+    .green-title{font-size:43pt;}
+
+    .resume-panel iframe{width:500px;}
+    .logo-link {font-size: 70px;}
+   
+}
+
+@media screen and (max-width: 946px) {
+    .title-top {font-size: 3em;}
+    .link-panel {font-size: 9pt;}
+    .subtitle{font-size: 29pt; margin-top: 12px; width: 100%; margin-right: 2000px;}
+    .green-title{font-size:35pt;}
+    .text-panel{font-size: 1em;}
+    .resume-panel iframe{width:3300px;}
+    .logo-link {font-size: 65px;}
+}
+
+@media screen and (max-width: 800px) {
+  /*  .text-panel1 {font-size: 13;}*/
+    /*.title-top {font-size: 52pt; top: -21px;}*/
+    .green-title{font-size:30pt;}
+
+    .subtitle{font-size: 25pt;}
+    .logo-link {font-size: 60px;}
+}
+
+    
+
+@media screen and (max-width: 700px) {
+  /*  .title-top {font-size: 50pt; }*/
+    .link-panel {display: none; top: -33px;}
+    .green-title{font-size:30pt;}
+    .name-panel{display:none;}
+    .hamburger-lines {display: block;}
+    .menu-extender{display:block;}
+    .text-panel1{width: 50%;}
+    .subtitle{font-size: 22pt;}
+    .hamburger {font-size: 60px;}
+    
+}
+
+@media screen and (max-width: 500px) {
+    .title-top {font-size: 2.2em;}
+  /*  .title-top {font-size: 48pt; }  */
+    .green-title{font-size:30pt;}
+    .text-panel1{width: 300px;}
+    .subtitle{font-size: 20pt;}
+    .logo-link {font-size: 55px;}
+}
+
+
+
+    
+
+
+
