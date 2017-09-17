@@ -114,9 +114,72 @@ h1,h2{
     font-size: 4.5em;
     text-align: center;
     clear: both;
-    
-
 }
+
+.buh {
+    display: none;
+    font-family: 'Lato', sans-serif;
+    color: #C1C1C1;
+
+    margin-top: 200px;
+    
+    width: 100%;
+    font-size: 4.5em;
+    text-align: center;
+    clear: both;
+}
+
+.snare { 
+    display: none;
+    font-family: 'Lato', sans-serif;
+    color: #C1C1C1;
+
+    margin-top: 200px;
+    
+    width: 100%;
+    font-size: 4.5em;
+    text-align: center;
+    clear: both;
+}
+
+.hi { 
+    display: none;
+    font-family: 'Lato', sans-serif;
+    color: #C1C1C1;
+
+    margin-top: 200px;
+    
+    width: 100%;
+    font-size: 4.5em;
+    text-align: center;
+    clear: both;
+}
+
+.clap { 
+    display: none;
+    font-family: 'Lato', sans-serif;
+    color: #C1C1C1;
+
+    margin-top: 200px;
+    
+    width: 100%;
+    font-size: 4.5em;
+    text-align: center;
+    clear: both;
+}
+
+.title-top2{
+    font-family: 'Lato', sans-serif;
+    color: #C1C1C1;
+
+    margin-top: 200px;
+    
+    width: 100%;
+    font-size: 4.5em;
+    text-align: center;
+    clear: both;
+}
+
 
 .highlight-link{
     /*background-color: #c6e5cd;*/
