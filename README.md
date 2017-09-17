@@ -6,4 +6,5 @@ sudo pip install sounddevice
 
 Before Running backend.py:
 sudo pip install Flask
-pip install flask-restful
+sudo pip install flask-restful
+sudo pip install flask-cors

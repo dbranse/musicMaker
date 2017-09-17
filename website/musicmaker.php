@@ -13,19 +13,20 @@
 
         window.addEventListener('load', function() {
         // Incrementally call getTweets every 5 seconds
+            console.log("WINDOW LOADED");
             click();
         }, false);
     
         function gotSound() { //asking if the server got the sound
-            $.get("localhost:5555", function(data,status){
-                return (status=="success")
+            $.get("http://localhost:5555", function(data,status){
+                return (status=="success");
             })
         }
         
         function click(){
-            $.get("localhost:5555", function(data,status)){
-                return (status=="success");
-            }
+            $.post("http://localhost:5555/click", function(data,status){
+                return (data['isClicked']);
+            })
         }
     
         function main(){
