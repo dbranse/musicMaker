@@ -167,7 +167,7 @@
         }
 
         function makeSong() {
-            $.post("http://localhost:5555/makeSong");
+            $.post("http://localhost:5555/sound/makeSong");
         }
         
         
