@@ -13,8 +13,8 @@
             console.log("WINDOW LOADED");
             var intervalId = setInterval(function() {
                 click(intervalId);
-            });
-        }, 1000);
+            }, 1000);
+        });
         
         
         function gotSound() { //asking if the server got the sound
@@ -26,8 +26,8 @@
         function click(intervalId){
             $.post("http://localhost:5555/click", function(data,status){
                 if (data['isClicked']) {
-                    
                     clearInterval(intervalId);
+                    
                     //$(".circle-panel").css("display", "block");///
                     initialRecordings();
                 };
