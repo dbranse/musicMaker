@@ -2,7 +2,7 @@
 
 Before Running simple_drummer.py:
 sudo pip install pydub
-sudo pip install sounddevice
+brew install ffmpeg --with-libvorbis --with-ffplay --with-theora
 
 Before Running backend.py:
 sudo pip install Flask
