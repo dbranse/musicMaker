@@ -45,6 +45,7 @@
 
         function bass() {
             //Remove Information Panels
+            $(".title-top").css("display", "none");
             $(".circle-panel").css("display", "none");
             $(".text-panel").css("display", "none");
 
@@ -190,12 +191,9 @@
 <body>
 
     
-    <div class="title-top" style="6.5em">
-    Welcome to <span class="text-panel-green">BeatRoot.</span>
-        
-    </div>
     
     <div class="title-top">
+        Welcome to <span class="text-panel-green">BeatRoot.</span>
          A semi-automated beat generation tool with a human touch.
 </div>
     
