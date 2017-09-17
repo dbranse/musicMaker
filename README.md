@@ -8,3 +8,5 @@ Before Running backend.py:
 sudo pip install Flask
 sudo pip install flask-restful
 sudo pip install flask-cors
+brew install portaudio
+pip install pyaudio
