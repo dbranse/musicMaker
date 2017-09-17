@@ -15,6 +15,7 @@ class Request(Resource):
         return -1
 
     def get(self):
+        print(request.args);
         return request.args
 
 api.add_resource(Request, '/requests')
