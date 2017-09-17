@@ -179,12 +179,12 @@
 <body>
 
     <div class="title-top">
-        Welcome to <span class="text-panel-green">the Thing.</span>
+        Welcome to <span class="text-panel-green">BeatRoot.</span> A semi-automated beat generation tool with a human touch.
 </div>
     
     
     <div class="text-panel">
-    To begin, hold the controller 3 inches (7.5 cm) from your face and press the go button<span class="text-panel-green"></span>.
+    To begin, stay within 1 foot of the laptop and press the go button<span class="text-panel-green"></span> .
         <span class="glyphicon glyphicon-hand-right"></span>
         
         
