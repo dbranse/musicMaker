@@ -4,12 +4,14 @@ import sounddevice as sd
 from threading import Thread
 from pydub import AudioSegment
 from pydub.playback import play
+import pydub.scipy_effects
+
 #sampling rate
 fs = 44100
 
 # AudioSegment.converter = '/Users/Marko/Downloads/Lion_Mountain_Lion_Mavericks_Yosemite_El-Captain_15.05.2017/ffmpeg'
 
-def transform_file(flpath):
+def transform_file(flpath, isbass = False, hi = False):
 
     def detect_leading_silence(sound, silence_threshold=-30.0, chunk_size=10):
         trim_ms = 0 # ms
@@ -31,6 +33,10 @@ def transform_file(flpath):
 
         return trim_ms
 
+    def match_target_amplitude(sound, target_dBFS):
+        change_in_dBFS = target_dBFS - sound.dBFS
+        return sound.apply_gain(change_in_dBFS)
+
     sound = AudioSegment.from_file(flpath, format="wav")
 
     start_trim = detect_leading_silence(sound)
@@ -38,14 +44,22 @@ def transform_file(flpath):
 
     trimmed_sound = sound[start_trim:-end_trim]
 
+    if isbass:
+        #trimmed_sound = trimmed_sound.low_pass_filter(100, order=1)
+        trimmed_sound = trimmed_sound.low_pass_filter(500, order=1)
+        trimmed_sound = trimmed_sound.low_pass_filter(2000, order=1)
+        trimmed_sound = match_target_amplitude(trimmed_sound, -18)
+    elif hi:
+        trimmed_sound = match_target_amplitude(trimmed_sound, -30)
+    else:
+        trimmed_sound = match_target_amplitude(trimmed_sound, -18)
+
     return trimmed_sound, detect_max_vol(trimmed_sound)
 
-
-
 # these will eventually be music files
-bass = transform_file('bass.wav')
+bass = transform_file('bass.wav', isbass = True)
 snare = transform_file('snare.wav')
-hihat = transform_file('hihat.wav')
+hihat = transform_file('hihat.wav', hi = True)
 clap = transform_file('clap.wav')
 
 d = {0: bass, 1: snare, 2: hihat, 3: clap}
@@ -54,9 +68,9 @@ beatarr = [[0], [1, 2], [3], [1, 2]] #each element contains things that should p
 simplebeats = [[[0,2],[1,2],[0,2],[1,2]], [[0],[2],[3],[2]], [[0,1,2],[2,3],[1,2],[2,3]], [[0,2],[1,3],[1,2],[1,3]], [[0,2],[1,2],[0,2],[1,2]]]
 moderatebeats = [[[0,2],[2],[1,2],[2],[0,2],[2],[1,2,3],[2,3]], [[0], [2],[3],[2],[0], [2,1],[3,1],[2,1]], [[0,2], [2],[3,2],[0,2],[2], [2],[3,2],[2]], [[0,2], [2],[2],[1,3,2],[2], [2],[1,3,2],[2]], [[0,2], [0,2],[3,2],[1,2],[2], [0,2],[3,2],[1,2]]]
 advancedbeats = [[[0,2],[2],[0,2],[2],[3,2],[2],[0,3],[2],[1,2],[0,2],[0,2],[2],[3,2],[2,1],[0,3,1],[2,1]], [[0,2],[1,2],[3,2],[1,2],[0,2],[1,2],[3,2],[1,2],[0,2],[1,2],[3,2],[1,2],[0,2],[1,2],[1,2],[1,2]], [[0,2],[2],[2],[2],[0],[],[1,2],[0],[2],[3],[3,2],[],[0,2],[2],[1],[2]], [[0,2], [2],[2],[1,3,2],[2], [2],[1,3,2],[2]], [[0,2],[2],[3,2],[0,2],[0,2],[0,2],[2],[3,2],[0,2],[1,2],[3,2],[1,2],[0,2],[1],[1,2],[1,2]]]
-bpm = 120
+bpm = 60
 
-beatarr = moderatebeats[3]
+beatarr = simplebeats[2]
 bpm*=2
 #l is the number of beats
 l = 100
