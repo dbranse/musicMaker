@@ -217,7 +217,9 @@
 
 <body>
 
-    
+    <div class="name-panel">
+    <img src="https://i.imgur.com/YoDkfOV.png">
+    </div>
     
     <div class="title-top">
         Welcome to <span class="text-panel-green">BeatRoot.</span> <br>
