@@ -1,7 +1,7 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 
 *{
@@ -292,7 +292,7 @@ body {
     background-color: #2B2B2B;
 }
    
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
 .photo-panel img,iframe{
     display: block;
     margin: auto;
@@ -404,49 +404,6 @@ button, a.button{
     color:   #70E889;  
 
     
-}
-
-.circle-panel{
-    position: relative;
-    /* top: 25%; */
-    left: 40%;
-    margin-top: -190px;
-    margin-left: -9%;
-    
-    
-}
-
-.circle-panel img{
-    
-    
-}
-
-
-#circle {
-	width: 800px;
-    height: 800px;
-    background: black;
-    -moz-border-radius: 100px;
-    -webkit-border-radius: 100px;
-    border-radius: 400px;
-    position: absolute;
-    opacity: .89;
-}
-
-
-
-/* Cleaner, but slightly less support: use "50%" as value */
-
-
-.ok-circle:before {
-  content: ' \25CF';
-  font-size: 60em;
-opacity: .93;
-    vertical-align: middle;
-    text-align:center;
-    left:10%;
-    position:relative; /*makes left effective*/
-    display:table-cell;
 }
 
 /*
