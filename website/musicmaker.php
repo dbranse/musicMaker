@@ -162,6 +162,8 @@
         }
         
         
+        
+        
     </script>
     <!-- fonts-->
 <link href='https://fonts.googleapis.com/css?family=Arvo|Bree+Serif|Varela+Round|Signika:400,600,300' rel='stylesheet' type='text/css'>
@@ -178,8 +180,14 @@
 
 <body>
 
+    
+    <div class="title-top" style="6.5em">
+    Welcome to <span class="text-panel-green">BeatRoot.</span>
+        
+    </div>
+    
     <div class="title-top">
-        Welcome to <span class="text-panel-green">BeatRoot.</span> A semi-automated beat generation tool with a human touch.
+         A semi-automated beat generation tool with a human touch.
 </div>
     
     
