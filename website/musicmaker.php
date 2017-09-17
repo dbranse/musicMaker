@@ -45,6 +45,7 @@
 
         function bass() {
             //Remove Information Panels
+            $(".title-top").css("display", "none");
             $(".circle-panel").css("display", "none");
             $(".text-panel").css("display", "none");
 
@@ -160,15 +161,45 @@
                 }
             }, 1000);
 
+            setTimeout(function() {flex();}, 10000);
+        }
+        
+        function flex() {
+            //$(".circle-panel").css("display", "none");
+            //Set Up Text/Counter
+            var counter = 6;
+            var text1 = "Please flex the sensor and hold it ";
+            var text2 = " seconds.";
+            $("#timeText").text(text1 + counter + text2);
+            
+            //Tell to startRecording
+            startRec("flex");
+            
+            //Count Down
+            var id = setInterval(function() {
+                $("#timeText").text(text1 + counter + text2);
+                counter--;
+                if(counter < 0) {
+                    clearInterval(id);
+                }
+            }, 1000);
+
             setTimeout(function() {
                 $("#timeText").text("Please wait while we calculate your song!");
                 makeSong();
-            })
+            }, 8000)
         }
 
         function makeSong() {
+
             $.post("http://localhost:5555/sound/makeSong");
+            setTimeout(function() {
+                $("#timeText").text("Here's your dope song! This is one-of-a-kind, and is nearly impossible to perfectly replicate.");
+                
+            })
         }
+        
+        
         
         
     </script>
@@ -187,8 +218,13 @@
 
 <body>
 
+    <div class="name-panel">
+    <img src="https://i.imgur.com/YoDkfOV.png">
+    </div>
+    
     <div class="title-top">
-        Welcome to <span class="text-panel-green">BeatRoot.</span> A semi-automated beat generation tool with a human touch.
+        Welcome to <span class="text-panel-green">BeatRoot.</span> <br>
+         A semi-automated beat generation tool with a human touch.
 </div>
     
     

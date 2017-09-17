@@ -111,7 +111,7 @@ h1,h2{
     margin-top: 200px;
     
     width: 100%;
-    font-size: 4.5em;
+    font-size: 5.5em;
     text-align: center;
     clear: both;
 }
@@ -211,7 +211,7 @@ a.logo-link{
 }
 
 .name-panel img{
-    width:90px;
+    width:240px;
     margin: 10px 10px 10px 10px;
 }
 
@@ -420,7 +420,7 @@ button, a.button{
     width: 45%;
     margin: auto;
     margin-bottom: 0.63em;
-    font-size: 2em;
+    font-size: 4em;
     line-height: 1.4em;
 }
 
