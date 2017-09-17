@@ -116,46 +116,7 @@ h1,h2{
     clear: both;
 }
 
-.buh {
-    display: none;
-    font-family: 'Lato', sans-serif;
-    color: #C1C1C1;
-
-    margin-top: 200px;
-    
-    width: 100%;
-    font-size: 4.5em;
-    text-align: center;
-    clear: both;
-}
-
-.snare { 
-    display: none;
-    font-family: 'Lato', sans-serif;
-    color: #C1C1C1;
-
-    margin-top: 200px;
-    
-    width: 100%;
-    font-size: 4.5em;
-    text-align: center;
-    clear: both;
-}
-
-.hi { 
-    display: none;
-    font-family: 'Lato', sans-serif;
-    color: #C1C1C1;
-
-    margin-top: 200px;
-    
-    width: 100%;
-    font-size: 4.5em;
-    text-align: center;
-    clear: both;
-}
-
-.clap { 
+#timeText {
     display: none;
     font-family: 'Lato', sans-serif;
     color: #C1C1C1;
