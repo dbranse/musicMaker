@@ -10,19 +10,21 @@
     
     <script>
 
-        window.addEventListener('load', function() {click();
-        }, false);
+        window.addEventListener('load', function() {
+            console.log("WINDOW LOADED");
+            click();
+
     
         function gotSound() { //asking if the server got the sound
-            $.get("localhost:5555", function(data,status){
-                return (status=="success")
+            $.get("http://localhost:5555", function(data,status){
+                return (status=="success");
             })
         }
         
         function click(){
-            $.get("localhost:5555", function(data,status)){
-                return (status=="success");
-            }
+            $.post("http://localhost:5555/click", function(data,status){
+                return (data['isClicked']);
+            })
         }
     
         function main(){
